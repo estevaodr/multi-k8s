@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: themisscake-com-tls
+spec:
+  secretName: themisscake-com
+  issuerRedf: 
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: themisscake.com
+  dnsNames:
+    - themisscake.com
+    - www.themisscake.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - themisscake.com
+          - www.themisscake.com 
