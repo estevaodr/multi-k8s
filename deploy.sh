@@ -14,3 +14,5 @@ kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=estevaodr/multi-server:$SHA
 kubectl set image deployments/client-deployment client=estevaodr/multi-client:$SHA
 kubectl set image deployments/worker-deployment worker=estevaodr/multi-worker:$SHA
+
+git rm --cached service-account.json
