@@ -16,7 +16,6 @@ before_install:
   - gcloud container clusters get-credentials multi-k8s
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t estevaodr/react-test -f ./client/Dockerfile.dev ./client
-  - rm -r service-account.json
 
 script:
   - docker run -e CI=true estevaodr/react-test npm run test
