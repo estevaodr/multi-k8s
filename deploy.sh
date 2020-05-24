@@ -15,6 +15,8 @@ kubectl set image deployments/server-deployment server=estevaodr/multi-server:$S
 kubectl set image deployments/client-deployment client=estevaodr/multi-client:$SHA
 kubectl set image deployments/worker-deployment worker=estevaodr/multi-worker:$SHA
 
-git add .
+rm -r service-account.json
 
-git commit -m "temp deploy"
+git rm service-account.json
+
+
